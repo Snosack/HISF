@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Halloween in Summer Fesival</title>
+<link rel="stylesheet" href="./Style.css"
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Butcherman&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url(./Assets/Background.webp); /* Change to your actual background image */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #fff;
+  }
+
+  .overlay {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  }
+
+  header {
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+  }
+
+  nav {
+    background-color: #333;
+    padding: 10px 0;
+    text-align: center;
+    position: relative; /* Ensure navigation stays on top of overlay */
+    z-index: 1; /* Ensure navigation stays on top of overlay */
+  }
+
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+  }
+
+  nav a:hover {
+    background-color: #666;
+  }
+
+  section {
+    padding: 20px;
+    text-align: center;
+  }
+
+  footer {
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .countdown {
+    font-family: Courier, monospace;
+    font-size: 18px;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .countdown span {
+    display: inline-block;
+    padding: 3px;
+    background-color: #ff6600; /* Orange */
+    border-radius: 2px;
+    margin: 0 2px;
+  }
+</style>
+</head>
+<body>
+
+<div class="overlay">
+  <header>
+    <h1>Halloween In Summer Festival</h1>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Sponsors</a>
+    <a href="#">Vendors</a>
+    <a href="#">Entertainment</a>
+    <a href="#">Tickets</a>
+    <a href="#">About</a>
+    <a href="#">FAQ</a>
+    <a href="#">Shop</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <section>
+    <h2>Welcome to the Halloween Festival</h2>
+    <p>Join us for a spooktacular celebration!</p>
+    <h3>Coming Soon</h3>
+<p>Ladies and gentlemen, behold! From the eerie depths of Magna, Utah, to the mystic streets of Poughkeepsie, NY, the Halloween in Summer Festival rises once more from the shadows! Join us in this haunted realm as creatures of the night emerge for a day of cosplay, unearthly attractions, and bone-chilling scares. Dare to join us in the enchanted aura of Poughkeepsie, where the darkness awaits your presence. Step right up, and let the haunting begin!</p>
+   
+
+    <img src="./Assets/Halloween.png" alt="Halloween Festival">
+  </section>
+
+  <footer>
+    <p class="countdown" id="countdown"></p>
+    <p>&copy; 2024 Halloween Festival. All rights reserved.</p>
+  </footer>
+</div>
+
+<script>
+  // Set the date we're counting down to
+  var countDownDate = new Date("June 21, 2025 10:00:00").getTime();
+
+  // Update the countdown every 1 second
+  var x = setInterval(function() {
+
+    // Get today's date and time
+    var now = new Date().getTime();
+
+    // Calculate the remaining time
+    var distance = countDownDate - now;
+
+    // Calculate days, hours, minutes, and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Display the result in the element with id="countdown"
+    document.getElementById("countdown").innerHTML = "<span>" + days + "</span> days " +
+                                                      "<span>" + hours + "</span> hours " +
+                                                      "<span>" + minutes + "</span> minutes " +
+                                                      "<span>" + seconds + "</span> seconds";
+
+    // If the countdown is over, display a message
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("countdown").innerHTML = "It's Halloween!";
+    }
+  }, 1000);
+</script>
+
+</body>
+</html>
